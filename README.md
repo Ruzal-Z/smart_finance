@@ -1,14 +1,14 @@
 Smart Finance
 ========================
-Description:
+Описание:
 -------------------------
-Yatube is a social network with the ability to:  
-     register,   
-     create, edit and delete posts,  
-     view, comment on posts by other authors,  
-     subscribe and unsubscribe to authors.    
+Smart Finance это социальная сеть с возможностью:
+      регистр,
+      создавать, редактировать и удалять сообщения,
+      просматривать, комментировать посты других авторов,
+      подписаться и отписаться от авторов.
 
-Technologies Stack:  
+Стек технологий:  
 -------------------------
   * Python 3.9  
   * Django 2.2  
@@ -16,42 +16,41 @@ Technologies Stack:
   * sorl-thumbnail  
 
 
-Installation and launch:
+Установка и запуск:
 -------------------------
  
-Clone the repository. On the command line:
+Клонируйте репозиторий:
 ```
      git clone https://github.com/Ruzal-Z/smart_finance.git
 ```
-or use SSH-key:
+или используйте SSH-ключ:
 ```
      git clone git@github.com:Ruzal-Z/smart_finance.git
 ```
-Install and activate the virtual environment
+Установить и активировать виртуальную среду
 ```
      python -m venv venv
 ```
 ```
      source venv/Scripts/activate
 ```
-Install dependencies from the file requirements.txt
+Установить зависимости из файла requirements.txt
 ```
      pip install -r requirements.txt
 ```
-Make migrate:
+Сделать миграцию:
 ```
      python manage.py migrate
 ```
-Run a project in dev-mode:
+Запустите проект в режиме разработки:
 ```
      cd smart_finance/  
 ```
 ```
      python manage.py runserver
 ```
-Open in your browser `localhost` or `127.0.0.1:8000`
+Откройте в своем браузере `localhost` или `127.0.0.1:8000`
 
 
-Author:
--------------------------
-Ruzal Zakirov
+## Автор:
+Рузал Закиров [GitHub](https://github.com/Ruzal-Z/)

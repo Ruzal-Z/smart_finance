@@ -21,11 +21,11 @@ Smart Finance это социальная сеть с возможностью:
  
 Клонируйте репозиторий:
 ```
-     git clone https://github.com/Ruzal-Z/smart_finance.git
+     git clone https://github.com/devbkd/smart_finance.git
 ```
 или используйте SSH-ключ:
 ```
-     git clone git@github.com:Ruzal-Z/smart_finance.git
+     git clone git@github.com:devbkd/smart_finance.git
 ```
 Установить и активировать виртуальную среду
 ```
@@ -53,4 +53,4 @@ Smart Finance это социальная сеть с возможностью:
 
 
 ## Автор:
-Рузал Закиров [GitHub](https://github.com/Ruzal-Z/)
+Рузал Закиров [GitHub](https://github.com/devbkd/)

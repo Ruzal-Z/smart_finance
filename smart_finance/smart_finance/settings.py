@@ -1,10 +1,12 @@
 import os
+from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", default="SUP3R-S3CR3T-K3Y-F0R-MY-PR0J3CT")
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -12,7 +14,7 @@ ALLOWED_HOSTS = [
     "[::1]",
     "testserver",
 ]
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
     "about.apps.AboutConfig",
+    "api.apps.ApiConfig",
 ]
 
 MIDDLEWARE = [
@@ -62,12 +65,15 @@ WSGI_APPLICATION = "smart_finance.wsgi.application"
 
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB', 'smart_finance'),
+        'USER': os.getenv('POSTGRES_USER', 'smart_finance_user'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'smart_finance_password'),
+        'HOST': os.getenv('DB_HOST', 'db'),
+        'PORT': os.getenv('DB_PORT', 5432),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -96,16 +102,21 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_root")]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR / 'static'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = '/media/'
+
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "posts:index"
 
-#  подключаем движок filebased.EmailBackend
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")

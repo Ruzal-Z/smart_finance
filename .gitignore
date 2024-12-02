@@ -145,10 +145,6 @@ dmypy.json
 
 .mypy_cache
 
-smart_finance.txt
-
 # папки со статикой и медиа
-static/
-smart_finance/posts/static/
-smart_finance/media/
 
+structure.md

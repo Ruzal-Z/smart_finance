@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title = "",
+    title = "Main",
     version = "0.1.0",
     description = "",
     openapi_url = "/api/v1/openapi.json"
